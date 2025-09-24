@@ -1,23 +1,35 @@
 {
-  "name": "StateXChange",
+  "name": "statexchange",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "rspack dev",
-    "build": "rspack build",
-    "preview": "rspack preview"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "@reduxjs/toolkit": "^2.9.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "mobx": "^6.13.7",
+    "mobx-react-lite": "^4.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@rspack/cli": "^1.5.1",
-    "@rspack/core": "^1.5.1",
-    "@rspack/plugin-react-refresh": "^1.4.3",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "react-refresh": "^0.17.0",
-    "typescript": "^5.9.2"
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.3",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.44.0",
+    "vite": "^7.1.7"
   }
 }
