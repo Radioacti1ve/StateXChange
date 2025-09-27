@@ -1,19 +1,15 @@
-import { useState } from 'react';
 import './App.css';
+import CardCurrency from './components/CardCurrency';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card bg-amber-700">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight">
+        Сравнение стейт менеджеров
+      </h1>
+      <div className="card">
+        <CardCurrency code="USD" value={123123} name="Доллар" />
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
