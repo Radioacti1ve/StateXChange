@@ -1,6 +1,6 @@
 import type { ICurrencyList } from '../types';
 
-export const currencyNames: Record<keyof ICurrencyList, string> = {
+export const CURRENCY_NAMES: Record<keyof ICurrencyList, string> = {
   USD: 'Доллар США',
   EUR: 'Евро',
   GBP: 'Фунт стерлингов',

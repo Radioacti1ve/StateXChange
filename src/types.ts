@@ -31,3 +31,19 @@ export interface ICardCurrencyProps {
   value: number;
   name?: string;
 }
+
+export type SortField = 'name' | 'value';
+export type SortOrder = 'asc' | 'desc';
+export type SortState = { field: SortField; order: SortOrder };
+
+export interface ISortBarProps {
+  value: SortState;
+  onChange: (next: SortState) => void;
+}
+
+export interface ICardsColumnsProps {
+  title: string;
+  items: ICardCurrencyProps[];
+  isLoading?: boolean;
+  error?: string;
+}

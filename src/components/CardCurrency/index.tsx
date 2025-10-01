@@ -1,9 +1,7 @@
-import { currencyNames } from '../../constants/currencyNames';
+import { FC } from 'react';
 import type { ICardCurrencyProps } from '../../types';
 
-function CardCurrency({ code, value }: ICardCurrencyProps) {
-  const name = currencyNames[code as keyof typeof currencyNames] ?? '';
-
+const CardCurrency: FC<ICardCurrencyProps> = ({ code, value, name }) => {
   return (
     <div className="rounded-2xl p-4 bg-white flex flex-col items-center w-44">
       <div className="text-xl font-bold text-indigo-600">{code}</div>
@@ -15,6 +13,6 @@ function CardCurrency({ code, value }: ICardCurrencyProps) {
       </div>
     </div>
   );
-}
+};
 
 export default CardCurrency;
