@@ -1,30 +1,32 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import { SortState } from './types';
-import { SortBar, CardColumns } from './components';
+import { useState } from 'react';
+import type { SortState } from './types';
+import { SortBar } from './components';
+// import ContextColumn from './columns/ContextColumn';
+// import MobXColumn from './columns/MobXColumn';
+// import ReduxColumn from './columns/ReduxColumn';
 
-const cur = [
-  { code: 'USD', value: 123 },
-  { code: 'EUR', value: 3123 },
-];
+export default function App() {
+  const [sort, setSort] = useState<SortState>({ field: 'name', order: 'asc' });
 
-function App() {
-  const [sort, setSort] = useState<SortState>({
-    field: 'name',
-    order: 'asc',
-  });
-
-  useEffect(() => {}, [sort]);
-  
   return (
     <main className="grid gap-5">
-      <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight">
-        Сравнение стейт менеджеров
+      <h1 className="text-3xl md:text-4xl font-bold text-center text-gradient tracking-tight">
+        Redux vs MobX vs Context
       </h1>
+
       <SortBar value={sort} onChange={setSort} />
-      <CardColumns title="redux" items={cur}></CardColumns>
+
+      {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <ReduxColumn sort={sort} />
+      </section> */}
+
+      {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <MobXColumn sort={sort} />
+      </section> */}
+
+      {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <ContextColumn sort={sort} />
+      </section> */}
     </main>
   );
 }
-
-export default App;

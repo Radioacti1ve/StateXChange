@@ -1,18 +1,15 @@
 @import 'tailwindcss';
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-primary: #6366f1;
+  --color-bg: #0f172a;
+  --color-panel: rgba(15, 23, 42, 0.4);
+  --color-card: #ffffff;
+  --color-strong: #1f2937;
+  --color-muted: #6b7280;
+  --color-on-dark: #ffffff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --gradient-accent: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
 }
 
 a {
@@ -28,6 +25,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--color-strong);
 }
 
 h1 {
@@ -65,4 +63,11 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.text-gradient {
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
