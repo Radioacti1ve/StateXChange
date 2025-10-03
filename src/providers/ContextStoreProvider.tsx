@@ -1,23 +1,23 @@
 import React, { useMemo, useReducer } from 'react';
-import { getCurrency } from '../../api/getCurrency';
-import { currencyToItem } from '../../utils';
-import type { SortState } from '../../types';
-import { CurrencyContext, type State } from './store';
+import { getCurrency } from '../api/getCurrency';
+import { currencyToItem } from '../utils';
+import type { SortState } from '../types';
+import { CurrencyContext, type IState } from '../stores/context/store';
 
 type Action =
   | { type: 'LOAD_START' }
-  | { type: 'LOAD_SUCCESS'; payload: State['items'] }
+  | { type: 'LOAD_SUCCESS'; payload: IState['items'] }
   | { type: 'LOAD_ERROR'; payload: string }
   | { type: 'SET_SORT'; payload: SortState };
 
-const initialState: State = {
+const initialState: IState = {
   items: [],
   isLoading: false,
   error: null,
   sort: { field: 'name', order: 'asc' },
 };
 
-function reducer(state: State, action: Action): State {
+function reducer(state: IState, action: Action): IState {
   switch (action.type) {
     case 'LOAD_START':
       return { ...state, isLoading: true, error: null };

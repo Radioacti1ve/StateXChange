@@ -22,7 +22,7 @@ export class CurrencyMobxStore {
   }
 
   setSort(s: SortState) {
-    if (this.sort.field === s.field && this.sort.order === s.order) return; // no-op
+    if (this.sort.field === s.field && this.sort.order === s.order) return;
     this.sort = s;
   }
 

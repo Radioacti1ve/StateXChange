@@ -1,7 +1,6 @@
-// src/hooks/useReduxStore.ts
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import type { SortState } from '../types'; // <-- поправь путь, если нужен ../../../types
+import type { SortState } from '../types';
 import type { AppDispatch, RootState } from '../stores/redux/store';
 import {
   selectSortedItems,

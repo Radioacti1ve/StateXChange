@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MobXStoreContext, CurrencyMobxStore } from './store';
+import { MobXStoreContext, CurrencyMobxStore } from '../stores/mobx/store';
 
 const MobXStoreProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

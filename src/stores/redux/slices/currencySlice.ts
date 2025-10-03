@@ -2,14 +2,14 @@ import { createSlice, createSelector, PayloadAction } from '@reduxjs/toolkit';
 import type { ICardCurrencyProps, SortState } from '../../../types';
 import { currencySort } from '../../../utils';
 
-export type CurrencyState = {
+export interface IReduxState {
   items: ICardCurrencyProps[];
   isLoading: boolean;
   error: string | null;
   sort: SortState;
-};
+}
 
-const initialState: CurrencyState = {
+const initialState: IReduxState = {
   items: [],
   isLoading: false,
   error: null,
@@ -43,7 +43,7 @@ export const { loadStart, loadSuccess, loadError, setSort } =
 
 export const currencyReducer = currencySlice.reducer;
 
-type RootLike = { currency: CurrencyState };
+type RootLike = { currency: IReduxState };
 
 export const selectCurrency = (s: RootLike) => s.currency;
 export const selectItems = (s: RootLike) => s.currency.items;

@@ -1,1 +1,1 @@
-export { default as ContextStoreProvider } from './ContextStoreProvider';
+export { default as ContextStoreProvider } from '../../providers/ContextStoreProvider';

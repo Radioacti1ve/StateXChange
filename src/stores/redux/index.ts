@@ -1,4 +1,3 @@
-export { default as ReduxStoreProvider } from './ReduxStoreProvider';
 export { reduxStore } from './store';
 export type { RootState, AppDispatch } from './store';
 

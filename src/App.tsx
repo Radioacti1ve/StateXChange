@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import type { SortState } from './types';
-import { SortBar } from './components';
-// import ContextColumn from './columns/ContextColumn';
-// import MobXColumn from './columns/MobXColumn';
-// import ReduxColumn from './columns/ReduxColumn';
+import { SortBar, ContextColumn, MobXColumn, ReduxColumn } from './components';
 
 export default function App() {
   const [sort, setSort] = useState<SortState>({ field: 'name', order: 'asc' });
@@ -15,18 +12,11 @@ export default function App() {
       </h1>
 
       <SortBar value={sort} onChange={setSort} />
-
-      {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className="grid grid-cols-3 md:grid-cols-3 gap-4 px-6">
         <ReduxColumn sort={sort} />
-      </section> */}
-
-      {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <MobXColumn sort={sort} />
-      </section> */}
-
-      {/* <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <ContextColumn sort={sort} />
-      </section> */}
+      </section>
     </main>
   );
 }

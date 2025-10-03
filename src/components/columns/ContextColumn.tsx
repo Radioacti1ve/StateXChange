@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
-import CardColumns from '../components/CardsColumns';
-import type { SortState } from '../types';
-import { useContextStore } from '../hooks/useContextStore';
-import { useRenderCount } from '../hooks/useRenderCount';
+import { CardColumns } from '..';
+import type { SortState } from '../../types';
+import { useContextStore, useRenderCount } from '../../hooks';
 
 const ContextColumn: React.FC<{ sort: SortState }> = ({ sort }) => {
   const renders = useRenderCount();
@@ -17,7 +16,6 @@ const ContextColumn: React.FC<{ sort: SortState }> = ({ sort }) => {
 
   useEffect(() => {
     load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

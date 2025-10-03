@@ -2,9 +2,11 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { ReduxStoreProvider } from './stores/redux';
-import { MobXStoreProvider } from './stores/mobx';
-import { ContextStoreProvider } from './stores/context';
+import {
+  ReduxStoreProvider,
+  MobXStoreProvider,
+  ContextStoreProvider,
+} from './providers';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
